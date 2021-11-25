@@ -119,7 +119,7 @@ This project was developed using Visual Studio Code, committed to git and pushed
 5. Under "Source", select the correct branch (in this case, “main”), and click on the Save-button.
 
 6. The page will refresh, and the message on top says:
-“Your site is ready to be published at: https://gurimarie..../.”
+“Your site is ready to be published at: https://gurimarie.github.io/my_favourite_shoes/”
 Use this link to access the deployed website.
 
 
