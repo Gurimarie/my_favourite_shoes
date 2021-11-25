@@ -1,7 +1,7 @@
 README-file- template
 
-# NAME OF PAGE
-## Additional info
+# My Favourite Shoes
+## Where shoe-lovers may share, discuss and talk about their favourite shoes 
 Info about the scope of the website
 
 
@@ -14,16 +14,16 @@ Click here to view the website
 ### User stories:
 
 ### First time visitor goals
-.....
+Exploring the site, get exited about talking to others who are interested in shoes, get inspired.
 
 ### Returning visitor goals
 .....
 
 ### Frequent user goals
-.....
+Sharing and getting followers. Perhaps promoting small shoe-brands?
 
 ### Site owner goals
-.........
+Get information on what shoelovers appreciate most in their shoes, and what variables should be available to choose from is the users were to design their own favourite shoes. Ultimately to create a on-demand-production, design-your-own-shoes, shoe-brand.
 
 ## Design
 
@@ -37,7 +37,7 @@ Click here to view the website
 ![Picture of fonts samples]()
 
 ### Imagery:
-
+- All images from https://www.pexels.com/search/shoes/
 
 ## Wireframes
 
@@ -61,7 +61,9 @@ Click here to view the website
 ### Programming languages:
 - html
 - css
-- Bootstrap
+- JavaScript
+- Python+Flask
+- MongoDB
 
 ### Frameworks, libraries and programs:
 - Bootstrap
