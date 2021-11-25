@@ -1,0 +1,25 @@
+.navbar {
+    background: black;
+    color: white;
+}
+
+body {
+    background: rgb(67, 96, 129);
+    text-align: center;
+}
+
+.main-heading {
+    background-image: url(../images/pexels-anastasia-shuraeva-5705503.jpg) no-repeat bottom right fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.footer {
+    background: black;
+    color: white;
+}
