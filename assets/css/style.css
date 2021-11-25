@@ -4,8 +4,9 @@
 }
 
 body {
-    background: rgb(67, 96, 129);
+    background: rgb(165, 180, 197);
     text-align: center;
+    height: 100vh;
 }
 
 .main-heading {
@@ -17,6 +18,18 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    height: 90%;
+}
+
+.gallery {
+    clear: both;
+    line-height: 0;
+    column-count: 4;
+    column-gap: 0px;
+}
+
+.gallery img {
+    width: 100%;
 }
 
 .footer {
