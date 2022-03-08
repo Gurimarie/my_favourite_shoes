@@ -1,14 +1,9 @@
-.navbar {
-    background: black;
-    color: white;
-}
-
 body {
-    background: rgb(165, 180, 197);
-    text-align: center;
+    background: rgb(150, 116, 145);
     height: 100vh;
 }
 
+/*
 .main-heading {
     background-image: url(../images/pexels-anastasia-shuraeva-5705503.jpg) no-repeat bottom right fixed;
     -webkit-background-size: cover;
@@ -20,7 +15,7 @@ body {
     position: relative;
     height: 90%;
 }
-
+*/
 
 /*Gallery-css from Love-running-project, Code Institute*/
 
