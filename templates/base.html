@@ -15,10 +15,38 @@
     {% endblock %}
     <title>My Favourite Shoes</title>
 </head>
-<body>
-    
+<body class="purple lighten-4">
+    <header>
+        <!-- Navbar from Materialize "Mobile Collapse Button" (https://materializecss.com/navbar.html) -->
+        <nav class="nav_extended purple darken-2 text-shadow">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('home_page') }}" class="brand-logo">My Favourite Shoes</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('home_page') }}">Home</a></li>
+                    <li><a href="{{ url_for('get_shoes') }}">Gallery</a></li>
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">Sign Out</a></li>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile collapse sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align purple-text">My Favourite Shoes</h4></li>
+            <li><a href="{{ url_for('home_page') }}">Home</a></li>
+            <li><a href="{{ url_for('get_shoes') }}">Gallery</a></li>
+            <li><a href="#">My Profile</a></li>
+            <li><a href="#">Sign Out</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </header>
+
     {% block content %}
-    
+
     {% endblock %}
 
     <!-- Minified jQuery from (https://releases.jquery.com/) (must load before Materialize)-->

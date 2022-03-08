@@ -1,8 +1,7 @@
 """ Python app-code """
 import os
 from flask import (
-    Flask, flash, render_template, redirect,
-    request, session, url_for)
+    Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -21,8 +20,13 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")            # default url also leads to this
-@app.route("/get_shoes")
+@app.route("/")             # default url also leads to this
+@app.route("/home_page")
+def home_page():
+    return render_template("index.html")
+
+
+@app.route("/get_shoes")    # this is actually for Gallery, not home-page!
 def get_shoes():
     """ Retrieve all shoes for Home-page """
     shoes = mongo.db.shoes.find()
