@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favourite Shoes</title>
+</head>
+<body>
+    {% for shoe in shoes %}
+        {{ shoe.shoes_name }}<br>
+        {{ shoe.category_name }}<br>
+        {{ shoe.shoes_description }}<br>
+        {{ shoe.brand_name }}<br>
+        {{ shoe.heel_height }}<br>
+        {{ shoe.toe_shape }}<br>
+        {{ shoe.design_level }}<br>
+        {{ shoe.comfort_level }}<br>
+        {{ shoe.construction_level }}<br>
+        {{ shoe.shoes_image }}<br>
+
+    {% endfor %}
+    
+</body>
+</html>
