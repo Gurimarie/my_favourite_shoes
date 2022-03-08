@@ -16,7 +16,8 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 
-""" Set up an instance of PyMongo (insure Flask app is communicating with MongoDB) """
+""" Set up an instance of PyMongo
+    (insure Flask app is communicating with MongoDB) """
 mongo = PyMongo(app)
 
 
