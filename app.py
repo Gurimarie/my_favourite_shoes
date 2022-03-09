@@ -30,7 +30,7 @@ def home_page():
 @app.route("/get_shoes")    # this is actually for Gallery, not home-page!
 def get_shoes():
     """ Retrieve all shoes for Home-page """
-    shoes = mongo.db.shoes.find()
+    shoes = list(mongo.db.shoes.find())
     return render_template("shoes.html", shoes=shoes)
 
 

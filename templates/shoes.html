@@ -1,42 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>I'm on the shoes.html-page</h2>
+    <h2>Shoe-gallery</h2>
 
-    {% for shoe in shoes %}
-        {{ shoe.shoes_name }}<br>
-        {{ shoe.category_name }}<br>
-        {{ shoe.shoes_description }}<br>
-        {{ shoe.brand_name }}<br>
-        {{ shoe.heel_height }}<br>
-        {{ shoe.toe_shape }}<br>
-        {{ shoe.design_level }}<br>
-        {{ shoe.comfort_level }}<br>
-        {{ shoe.construction_level }}<br>
-        {{ shoe.shoes_image }}<br>
-
-    {% endfor %}
-
-    <div class="container">
+    <div class="container white s12">
         <div class="row">
-    
-              <!-- "Card reveal" from https://materializecss.com/cards.html -->
-                <div class="card small col s12 m6 l4 xl3">
+            {% for shoe in shoes %}
+                <!-- "Card reveal" from https://materializecss.com/cards.html -->
+                <div class="card small col s12 m6 xl4">
                     <!-- Image -->
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="images/office.jpg">
+                        <img class="activator" src="{{ shoe.shoes_image }}">
                     </div>
-                    <!-- Content under image (always visible) -->
+                    <!-- Content below image (always visible) -->
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                        <span class="card-title activator grey-text text-darken-4">
+                            <strong>{{ shoe.shoes_name }}</strong>
+                            <i class="material-icons right">more_vert</i>
+                        </span>
                         <p><a href="#">This is a link</a></p>
                     </div>
                     <!-- Text to be revealed -->
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                        <span class="card-title grey-text text-darken-4">{{ shoe.shoes_name }}
+                            <i class="material-icons right">close</i>
+                        </span>
+                        <p>{{ shoe.shoes_description }}</p>
+                        <div><small>Category: {{ shoe.category_name }}</small></div>
+                        <div><small>Brand: {{ shoe.brand_name }}</small></div>
+                        <div><small>Heel-height: {{ shoe.heel_height }}</small></div>
+                        <div><small>Toe-shape: {{ shoe.toe_shape }}</small></div>
+                        <div><small>Design: {{ shoe.design_level }}</small></div>
+                        <div><small>Comfort: {{ shoe.comfort_level }}</small></div>
+                        <div><small>Construction: {{ shoe.construction_level }}</small></div>
+                        <div><small>Username: {{ shoe.username }}</small></div>
+                        <div><small>Date added: {{ shoe.date_added }}</small></div>
                     </div>
                 </div>
+            {% endfor %}
         </div>
     </div>
 
