@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Add a pair of your favourite shoes!</h3>
+
+    <!-- "Card Panel" from https://materializecss.com/cards.html -->
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_shoes') }}" >
+            <div class="card-panel">
+                <!-- Name / headline for this pair of shoes -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="shoes_name" name="shoes_name" type="text" class="validate"
+                            minlength="4" maxlength="20" pattern="^[a-zA-Z0-9]{4,20}$" required>
+                        <label for="shoes_name">Name</label>
+                    </div>
+                </div>
+                <!-- Category  (select from https://materializecss.com/select.html) -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select>
+                            <option value="" disabled selected>Choose category</option>
+                            {% for category in categories %}
+                                <option value="1">{{ category }}</option>
+                            {% endfor %}
+                        </select>
+                        <label>Category</label>
+                    </div>
+                </div>
+                <!-- Description (textarea from https://materializecss.com/text-inputs.html) -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Description</label>
+                    </div>
+                </div>
+                <!-- Brand -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="shoes_name" name="shoes_name" type="text" class="validate"
+                            minlength="4" maxlength="30" pattern="^[a-zA-Z0-9]{4,30}$" required>
+                        <label for="shoes_name">Name of brand</label>
+                    </div>
+                </div>
+                
+                <!-- Register-button -->
+                <div class="row">
+                    <button type="submit" class="col s3 offset-s2 btn-large light-blue darken-4">Add now <i></i></button>
+                    <button type="cancel" class="col s3 offset-s2 btn-large green darken-2">Cancel <i></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Link to login-page for existing users -->
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align">Already registered? <a href="{{ url_for('login') }}">Go to login-page.</a></p>
+        </div>
+    </div>
+                
+
+{% endblock %}

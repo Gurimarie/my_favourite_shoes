@@ -107,6 +107,11 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_shoes", methods=["GET", "POST"])
+def add_shoes():
+    return render_template("add_shoes.html")
+
+
 # Run app
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
