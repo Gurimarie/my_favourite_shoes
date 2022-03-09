@@ -2,7 +2,22 @@
 {% block content %}
 
     <h1>Gallery of Shoes</h1>
-           
+       
+    {% for shoe in shoes %}
+        {{ shoe.shoes_name }}<br>
+        {{ shoe.category_name }}<br>
+        {{ shoe.shoes_description }}<br>
+        {{ shoe.brand_name }}<br>
+        {{ shoe.heel_height }}<br>
+        {{ shoe.toe_shape }}<br>
+        {{ shoe.design_level }}<br>
+        {{ shoe.comfort_level }}<br>
+        {{ shoe.construction_level }}<br>
+        {{ shoe.shoes_image }}<br>
+        {{ shoe.username }}<br>
+        {{ shoe.date_added }}<br>
+
+    {% endfor %}
 
     
 {% endblock %}
