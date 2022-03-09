@@ -62,13 +62,16 @@ Get information on what shoelovers appreciate most in their shoes, and what vari
 - html
 - css
 - JavaScript
-- Python+Flask
+- Python + Flask (flask pymongo)
 - MongoDB
+- jQuery
 
 ### Frameworks, libraries and programs:
-- Bootstrap
-- Google Fonts
-- Font-awsome
+- MaterializeCss https://materializecss.com
+- RandomKeyGem (for secret_key) https://randomkeygen.com/
+- Werkzeug Security Helpers (for user password-hashing)
+https://werkzeug.palletsprojects.com/en/2.0.x/utils/#module-werkzeug.security
+
 
 ## Testing
 
