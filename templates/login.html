@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Register</h3>
+    <h3 class="center-align">Log In</h3>
 
     <!-- "Card Panel" from https://materializecss.com/cards.html -->
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}" >
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}" >
             <div class="card-panel">
                 <!-- Username -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="material-icons prefix">person_add</i>
+                        <i class="material-icons prefix">account_circle</i>
                         <input id="username" name="username" type="text" class="validate"
                             minlength="4" maxlength="20" pattern="^[a-zA-Z0-9]{4,20}$" required>
                         <label for="username">Username</label>
@@ -25,25 +25,17 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-                <!-- Email -->
+                <!-- Login-button -->
                 <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">email</i>
-                        <input id="email" name="email" type="text" class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-                <!-- Register-button -->
-                <div class="row">
-                    <button type="submit" class="col s6 offset-s3 btn-large light-blue darken-4 text-shadow">Register now <i></i></button>
+                    <button type="submit" class="col s6 offset-s3 btn-large light-blue darken-4 text-shadow">Log In <i class="material-icons">login</i></button>
                 </div>
             </div>
         </form>
     </div>
-    <!-- Link to login-page for existing users -->
+    <!-- Link to register-page in case user is new -->
     <div class="row">
         <div class="col s12">
-            <p class="center-align">Already registered? <a href="{{ url_for('login') }}">Go to login-page.</a></p>
+            <p class="center-align">New here? <a href="{{ url_for('register') }}">Register account.</a></p>
         </div>
     </div>
                 
