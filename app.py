@@ -27,11 +27,19 @@ def home_page():
     return render_template("index.html")
 
 
-@app.route("/get_shoes")    # MUST ADD "ONLY PUBLIC!"
+@app.route("/get_shoes") 
 def get_shoes():
     """ Retrieve all shoes for Gallery-page """
     shoes = list(mongo.db.shoes.find())
     return render_template("shoes.html", shoes=shoes)
+
+
+@app.route("/search", methods=["GET", "POST"]) 
+def search():
+    query = request.form.get("query")
+    shoes = list(mongo.db.shoes.find({"$text": {"$search": query}}))
+    return render_template("shoes.html", shoes=shoes)
+
 
 
 @app.route("/register", methods=["GET", "POST"])

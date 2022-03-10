@@ -3,14 +3,35 @@
 
     <h2 class="center-align">Shoe-gallery</h2>
 
-    <div class="container white s12">
-        <div class="row">
+    <!-- Search-area -->
+    <div class="row card-panel">
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="material-icons prefix tooltipped" 
+                        data-tooltip="Search through the database">search</i>
+                    <input type="text" name="query" id="query" class="validate" minlength="3" required>
+                    <label for="query">Search database</label>
+                </div>
+                <div class="col s12 m4">
+                    <button type="submit" class="light-blue darken-1 btn ">Search</button>
+                    <a href="{{ url_for('get_shoes') }}" class="btn green">Reset</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Gallery-area -->
+    {% if shoes|length >0  %}
+        <div class="row card-panel white">
             {% for shoe in shoes %}
-                <!-- Display all shoes in database that are not marked as private -->
+            <!-- Display all shoes in database that are not marked as private -->
                 {% if shoe.is_private == "no" %}
                     <!-- "Card reveal" from https://materializecss.com/cards.html -->
                     <div class="card small col s12 m6 xl4">
-                        <div><h5>{{ shoe.shoes_name }}</h5></div>
+                        <div>
+                            <h5>{{ shoe.shoes_name }}</h5>
+                        </div>
                         <!-- Image -->
                         <div class="card-image waves-effect waves-block waves-light">
                             <img class="activator" src="{{ shoe.shoes_image }}">
@@ -18,7 +39,9 @@
                         <!-- Content below image (always visible) -->
                         <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">
-                                <i class="material-icons right tooltipped" data-tooltip="More info">library_books</i>
+                                <i class="material-icons right tooltipped" data-tooltip="More info">
+                                    library_books
+                                </i>
                             </span>
                         </div>
                         <!-- Text to be revealed -->
@@ -41,8 +64,9 @@
                 {% endif %}
             {% endfor %}
         </div>
-    </div>
-
-    
+    {% else %}
+        <h4 class="center-align red-text">No results found.</h4>
+        <p class="center-align">Click "reset" to try again or to see the whole gallery.</p>
+    {% endif %}
 
 {% endblock %}
