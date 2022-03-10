@@ -11,7 +11,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <input id="shoes_name" name="shoes_name" type="text" class="validate"
-                    minlength="4" maxlength="20" required>
+                    value="{{ shoes.shoes_name }}" minlength="4" maxlength="20" required>
                 <label for="shoes_name">Name</label>
             </div>
         </div>
@@ -20,9 +20,13 @@
         <div class="row">
             <div class="input-field col s12">
                 <select id="category_name" name="category_name" class="validate" required>
-                    <option value="" disabled selected>Choose category</option>
+                    <option value="" disabled>Choose category</option>
                     {% for category in categories %}
-                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% if category.category_name == shoes.category_name %}
+                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                        {% else %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="category_name">Category</label>
@@ -33,7 +37,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <textarea id="shoes_description" name="shoes_description" class="materialize-textarea validate"
-                    minlength="5" maxlength="100"></textarea>
+                    minlength="5" maxlength="100">{{- shoes.shoes_description -}}</textarea>
                 <label for="shoes_description">Description</label>
             </div>
         </div>
@@ -41,7 +45,7 @@
         <!-- Add image -->
         <div class="row">
             <div class="input-field col s12">
-                <input id="shoes_image" name="shoes_image" type="text" class="validate" required>
+                <input id="shoes_image" name="shoes_image" type="text" value="{{ shoes.shoes_image }}" class="validate" required>
                 <label for="shoes_image">Link to image</label>
             </div>
         </div>
@@ -49,13 +53,12 @@
         <!-- Brand -->
         <div class="row">
             <div class="input-field col s12">
-                <input id="shoes_name" name="shoes_name" type="text" class="validate">
+                <input id="shoes_name" name="shoes_name" type="text" value="{{ shoes.brand_name }}" class="validate">
                 <label for="shoes_name">Name of brand</label>
             </div>
         </div>
 
-        <!-- Heel-height -->
-        <!-- Category  (select from https://materializecss.com/select.html) -->
+        <!-- Heel-height ("Select" from https://materializecss.com/select.html) -->
         <div class="row">
             <div class="input-field col s12">
                 <select id="heel_height" name="heel_height">
@@ -72,10 +75,10 @@
             </div>
         </div>
 
-        <!-- Toe-shape -->
+        <!-- Toe-shape  ("Select" from https://materializecss.com/select.html) -->
         <div class="row">
             <div class="input-field col s12">
-                <select id="toe-shape" name="toe-shape">
+                <select id="toe_shape" name="toe_shape">
                     <option value="" disabled selected>Choose toe-shape</option>
                     <option value="pointed">Pointed</option>
                     <option value="round">Round</option>
@@ -83,7 +86,7 @@
                     <option value="square">Square</option>
                     <option value="other">Other</option>
                 </select>
-                <label for="toe-shape">Toe-shape</label>
+                <label for="toe_shape">Toe-shape</label>
             </div>
         </div>
 
@@ -91,7 +94,8 @@
         <div class="row">
             <div class="range-field col s12">
                 <p>How much do you like the design?</p>
-                <input id="design-level" name="design-level" type="range" class="validate" min="0" max="10">
+                <input id="design-level" name="design-level" type="range"
+                value="{{ shoes.design_level }}" class="validate" min="0" max="10">
                 <label for="design-level">Range from 0 to 10 where 10 is the best.</label>
             </div>
         </div>
@@ -100,7 +104,8 @@
         <div class="row">
             <div class="range-field col s12">
                 <p>How comfortable are the shoes?</p>
-                <input id="comfort-level" name="comfort-level" type="range" class="validate" min="0" max="10">
+                <input id="comfort-level" name="comfort-level" type="range"
+                value="{{ shoes.comfort_level }}" class="validate" min="0" max="10">
                 <label for="comfort-level">Range from 0 to 10 where 10 is the best.</label>
             </div>
         </div>
@@ -109,7 +114,8 @@
         <div class="row">
             <div class="range-field col s12">
                 <p>How is the construction?</p>
-                <input id="construction-level" name="construction-level" type="range" class="validate" min="0" max="10">
+                <input id="construction-level" name="construction-level" type="range"
+                value="{{ shoes.construction_level }}" class="validate" min="0" max="10">
                 <label for="construction-level">Range from 0 to 10 where 10 is the best.</label>
             </div>
         </div>
@@ -122,7 +128,11 @@
                 <div class="switch">
                     <label for="is_private">
                         Show everyone!
+                        {% if shoes.is_private == "yes" %}
+                        <input type="checkbox" id="is_private" name="is_private" checked>
+                        {% else %}
                         <input type="checkbox" id="is_private" name="is_private">
+                        {% endif %}
                         <span class="lever"></span>
                         For my eyes only...
                     </label>
@@ -133,7 +143,8 @@
         <!-- Date of registration (from )-->
         <div class="row">
             <div class="input-field col s12">
-                <input id="date_added" name="date_added" type="text" class="datepicker validate">
+                <input id="date_added" name="date_added" type="text"
+                    class="datepicker validate" value="{{ shoes.date_added}}" >
                 <label for="date_added">Date added</label>
             </div>
         </div>
@@ -141,8 +152,12 @@
         <!-- Buttons (edit and cancel) -->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="col s3 offset-s2 btn light-blue darken-4 waves-effect waves-light">Edit <i class="material-icons right">mode_edit</i></button>
-                <button type="cancel" class="col s3 offset-s2 btn green darken-2 waves-effect waves-light">Cancel <i class="material-icons right">clear</i></button>
+                <a href="{{ url_for('profile', username=session['user']) }}" class="col s3 offset-s2 btn green darken-2 waves-effect waves-light">
+                    Cancel <i class="material-icons right">clear</i>
+                </a>
+                <button type="submit" class="col s3 offset-s2 btn light-blue darken-4 waves-effect waves-light">
+                    Save changes <i class="material-icons right">mode_edit</i>
+                </button>
             </div>
         </div>
     </form>
