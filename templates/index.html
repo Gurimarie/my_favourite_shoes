@@ -1,16 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="main-heading">
-        <h1>Do you love shoes??</h1>
-        <h2>Then this is the place for you!</h2>
-        <h3>We love shoes. We love to look at them, we love to wear them, we love to talk about them!</h3>
-        <h3>Here, we can share our favourite shoes, see what shoes others love, and perhaps find an idea for our next favourite pair of shoes...</h3>
-        <h3>Come join us!</h3>
+    <div class="row card-panel center-align">
+        <h2>Do you love shoes??</h2>
+        <h4>Then this is the place for you!</h4>
+        <p>We love shoes. We love to look at them, we love to wear them, 
+            we love to talk about them!</p>
+        <p>Here, we can share our favourite shoes, see what shoes others love, 
+            and perhaps find an idea for our next favourite pair of shoes...</p>
+        <h5>Come join us!</h5>
+    
+        <div class="row">
+            <div class="card small col s12 m4">
+                <div class="card-image">
+                    <img src="https://images.pexels.com/photos/267301/pexels-photo-267301.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <span class="card-title text-shadow">Check out the Gallery and see whats trending!</span>
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('get_shoes') }}">Gallery</a>
+                </div>
+            </div>
+
+            <div class="card small col s12 m4">
+                <div class="card-image">
+                    <img src="https://images.pexels.com/photos/609771/pexels-photo-609771.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <span class="card-title text-shadow">Connect with other shoe-lovers and get inspired!</span>
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('get_shoes') }}">Gallery</a>
+                </div>
+            </div>
+
+            <div class="card small col s12 m4">
+                <div class="card-image">
+                    <img src="https://images.pexels.com/photos/977908/pexels-photo-977908.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <span class="card-title text-shadow">Add your own favourites to the database and inspire others!</span>
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('login') }}">Log In</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="trending"></div>
-
-    <div class="explore"></div>
-    
 {% endblock %}
