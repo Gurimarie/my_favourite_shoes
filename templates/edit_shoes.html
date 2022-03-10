@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Edit record</h3>
+
+<!-- "Card Panel" from https://materializecss.com/cards.html -->
+<div class="row card-panel">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_shoes', shoes_id=shoes._id) }}">
+
+        <!-- Name / headline for this pair of shoes -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="shoes_name" name="shoes_name" type="text" class="validate"
+                    minlength="4" maxlength="20" required>
+                <label for="shoes_name">Name</label>
+            </div>
+        </div>
+
+        <!-- Category  (select from https://materializecss.com/select.html) -->
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Choose category</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="category_name">Category</label>
+            </div>
+        </div>
+
+        <!-- Description (textarea from https://materializecss.com/text-inputs.html) -->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="shoes_description" name="shoes_description" class="materialize-textarea validate"
+                    minlength="5" maxlength="100"></textarea>
+                <label for="shoes_description">Description</label>
+            </div>
+        </div>
+
+        <!-- Add image -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="shoes_image" name="shoes_image" type="text" class="validate" required>
+                <label for="shoes_image">Link to image</label>
+            </div>
+        </div>
+
+        <!-- Brand -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="shoes_name" name="shoes_name" type="text" class="validate">
+                <label for="shoes_name">Name of brand</label>
+            </div>
+        </div>
+
+        <!-- Heel-height -->
+        <!-- Category  (select from https://materializecss.com/select.html) -->
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="heel_height" name="heel_height">
+                    <option value="" disabled selected>Choose heel-height</option>
+                    <option value="0-1 cm">0-1 cm</option>
+                    <option value="1-2 cm">1-2 cm</option>
+                    <option value="2-4 cm">2-4 cm</option>
+                    <option value="4-6 cm">4-6 cm</option>
+                    <option value="6-8 cm">6-8 cm</option>
+                    <option value="8-10 cm">8-10 cm</option>
+                    <option value="10-12 cm">10-12 cm</option>
+                </select>
+                <label for="heel_height">Heel-height</label>
+            </div>
+        </div>
+
+        <!-- Toe-shape -->
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="toe-shape" name="toe-shape">
+                    <option value="" disabled selected>Choose toe-shape</option>
+                    <option value="pointed">Pointed</option>
+                    <option value="round">Round</option>
+                    <option value="oval">Oval</option>
+                    <option value="square">Square</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="toe-shape">Toe-shape</label>
+            </div>
+        </div>
+
+        <!-- Design-level -->
+        <div class="row">
+            <div class="range-field col s12">
+                <p>How much do you like the design?</p>
+                <input id="design-level" name="design-level" type="range" class="validate" min="0" max="10">
+                <label for="design-level">Range from 0 to 10 where 10 is the best.</label>
+            </div>
+        </div>
+
+        <!-- Comfort-level -->
+        <div class="row">
+            <div class="range-field col s12">
+                <p>How comfortable are the shoes?</p>
+                <input id="comfort-level" name="comfort-level" type="range" class="validate" min="0" max="10">
+                <label for="comfort-level">Range from 0 to 10 where 10 is the best.</label>
+            </div>
+        </div>
+
+        <!-- Construction-level -->
+        <div class="row">
+            <div class="range-field col s12">
+                <p>How is the construction?</p>
+                <input id="construction-level" name="construction-level" type="range" class="validate" min="0" max="10">
+                <label for="construction-level">Range from 0 to 10 where 10 is the best.</label>
+            </div>
+        </div>
+
+        <!-- Is public or not (visible to other users)-->
+        <!-- Switch (from https://materializecss.com/switches.html) -->
+        <div class="row">
+            <div class="input-field col s12">
+                <p>Do you want to show these shoes to the world, or keep them to yourself?</p>
+                <div class="switch">
+                    <label for="is_private">
+                        Show everyone!
+                        <input type="checkbox" id="is_private" name="is_private">
+                        <span class="lever"></span>
+                        For my eyes only...
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date of registration (from )-->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="date_added" name="date_added" type="text" class="datepicker validate">
+                <label for="date_added">Date added</label>
+            </div>
+        </div>
+
+        <!-- Buttons (edit and cancel) -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="col s3 offset-s2 btn light-blue darken-4 waves-effect waves-light">Edit <i class="material-icons right">mode_edit</i></button>
+                <button type="cancel" class="col s3 offset-s2 btn green darken-2 waves-effect waves-light">Cancel <i class="material-icons right">clear</i></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

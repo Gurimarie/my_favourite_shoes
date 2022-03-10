@@ -94,7 +94,7 @@ def profile(username):
     shoes = list(mongo.db.shoes.find())
 
     if session["user"]:
-        return render_template("profile.html", username=username, shoes=shoes)
+        return render_template("profile.html", shoes=shoes, username=username)
 
     # If session-cookie is gone, redirect to login (for security) 
     return redirect(url_for("login"))
@@ -133,6 +133,14 @@ def add_shoes():
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_shoes.html", categories=categories)
+
+
+@app.route("/edit_shoes/<shoes_id>", methods=["GET", "POST"])
+def edit_shoes(shoes_id):
+    shoes = mongo.db.shoes.find_one({"_id": ObjectId(shoes_id)})
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_shoes.html", shoes=shoes, categories=categories)
 
 
 # Run app
