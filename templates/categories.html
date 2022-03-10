@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Edit categories</h3>
+
+<!-- "Card Panel" from https://materializecss.com/cards.html -->
+<div class="card-panel center-align">
+    <!-- Add-new-category-button -->
+    <div class="row">
+        <div class="col s12 m4 center-align">
+            <a href="{{ url_for('add_shoes') }}" class="col btn-large light-blue darken-4 text-shadow tooltipped"
+                data-position="right" data-tooltip="Click to add a new category!">
+                Add category <i class="material-icons">add</i>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        {% for category in categories %}
+        <div class="col s12 m4">
+            <div class="card center-align">
+                <div class="card-content">
+                    <span class="card-title">{{ category.category_name }}</span>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="btn red darken-3 tooltipped" data-position="left"
+                        data-tooltip="Delete category"><i class="material-icons">delete</i>
+                    </a>
+                    <a href="#" class="btn light-blue darken-4 tooltipped" data-position="right"
+                        data-tooltip="Edit category"><i class="material-icons">mode_edit</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+
+
+{% endblock %}

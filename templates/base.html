@@ -28,7 +28,9 @@
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
                         <li><a href="{{ url_for('add_shoes') }}">Add New</a></li>
-                        <li><a href="#">Categories</a></li>
+                        {% if session.user|lower == "admin"|lower %}
+                            <li><a href="{{ url_for('get_categories') }}">Categories</a></li>
+                        {% endif %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -46,7 +48,11 @@
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
                 <li><a href="{{ url_for('add_shoes') }}">Add New</a></li>
-                <li><a href="#">Categories</a></li>
+
+                <!-- Categories -only access for admin-user-->
+                {% if session.user|lower == "admin"|lower %}
+                    <li><a href="{{ url_for('get_categories') }}">Categories</a></li>
+                {% endif %}
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
