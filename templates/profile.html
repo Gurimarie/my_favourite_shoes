@@ -10,7 +10,7 @@
                
                 <!-- Add-shoes-button -->
                 <div class="row">
-                    <a href="{{ url_for('add_shoes') }}" class="col btn-large light-blue darken-4 text-shadow">
+                    <a href="{{ url_for('add_shoes') }}" class="col btn-large light-blue darken-4">
                         <i class="material-icons tooltipped" data-position="right"
                         data-tooltip="Click to add another pair of shoes!">add</i>
                     </a>
@@ -30,8 +30,12 @@
                                 <!-- Content below image (always visible) -->
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">
-                                        <a href="{{ url_for('edit_shoes', shoes_id=shoe._id) }}" class="btn-small light-blue">Edit</a>
-                                        <i class="material-icons right tooltipped" data-tooltip="More info">library_books</i>
+                                        <a href="{{ url_for('edit_shoes', shoes_id=shoe._id) }}" 
+                                            class="btn-small light-blue">Edit
+                                        </a>
+                                        <i class="material-icons right tooltipped"
+                                            data-tooltip="More info">library_books
+                                        </i>
                                     </span>
                                 </div>
                                 <!-- Text to be revealed -->
@@ -54,11 +58,8 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-
             </div>
         </div>
     </div>
     
-                
-
 {% endblock %}

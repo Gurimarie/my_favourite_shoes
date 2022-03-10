@@ -35,7 +35,9 @@
                 </div>
                 <!-- Register-button -->
                 <div class="row">
-                    <button type="submit" class="col s6 offset-s3 btn-large light-blue darken-4 text-shadow">Register now <i></i></button>
+                    <button type="submit" class="col s6 offset-s3 btn-large light-blue darken-4">
+                        Register now
+                    </button>
                 </div>
             </div>
         </form>
@@ -43,9 +45,10 @@
     <!-- Link to login-page for existing users -->
     <div class="row">
         <div class="col s12">
-            <p class="center-align">Already registered? <a href="{{ url_for('login') }}">Go to login-page.</a></p>
+            <p class="center-align">Already registered? <a href="{{ url_for('login') }}">
+                Go to login-page.</a>
+            </p>
         </div>
     </div>
                 
-
 {% endblock %}

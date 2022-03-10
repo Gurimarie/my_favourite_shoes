@@ -27,19 +27,18 @@ def home_page():
     return render_template("index.html")
 
 
-@app.route("/get_shoes") 
+@app.route("/get_shoes")
 def get_shoes():
     """ Retrieve all shoes for Gallery-page """
     shoes = list(mongo.db.shoes.find())
     return render_template("shoes.html", shoes=shoes)
 
 
-@app.route("/search", methods=["GET", "POST"]) 
+@app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     shoes = list(mongo.db.shoes.find({"$text": {"$search": query}}))
     return render_template("shoes.html", shoes=shoes)
-
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -48,11 +47,11 @@ def register():
         # Check if username already exists in database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
+
         if existing_user:
             flash("This username already exists! Please try again.")
             return redirect(url_for("register"))
-        
+
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
@@ -104,7 +103,7 @@ def profile(username):
     if session["user"]:
         return render_template("profile.html", shoes=shoes, username=username)
 
-    # If session-cookie is gone, redirect to login (for security) 
+    # If session-cookie is gone, redirect to login (for security)
     return redirect(url_for("login"))
 
 

@@ -5,36 +5,3 @@
 .flashes h4 {
     line-height: 2;
 }
-
-/*
-body {
-    background: rgb(150, 116, 145);
-    height: 100vh;
-}
-*/
-/*
-.main-heading {
-    background-image: url(../images/pexels-anastasia-shuraeva-5705503.jpg) no-repeat bottom right fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 90%;
-}
-*/
-
-/*Gallery-css from Love-running-project, Code Institute*/
-
-.gallery {
-    clear: both;
-    line-height: 0;
-    column-count: 4;
-    column-gap: 0px;
-}
-
-.gallery img {
-    width: 100%;
-}
