@@ -171,7 +171,6 @@ def delete_shoes(shoes_id):
     return redirect(url_for('profile', username=session['user']))
 
 
-
 # Run app
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
