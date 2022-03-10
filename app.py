@@ -137,6 +137,27 @@ def add_shoes():
 
 @app.route("/edit_shoes/<shoes_id>", methods=["GET", "POST"])
 def edit_shoes(shoes_id):
+    if request.method == "POST":
+        is_private = "yes" if request.form.get("is_private") else "no"
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "shoes_name": request.form.get("shoes_name"),
+            "shoes_description": request.form.get("shoes_description"),
+            "brand_name": request.form.get("brand_name"),
+            "comfort_level": request.form.get("comfort-level"),
+            "design_level": request.form.get("design-level"),
+            "construction_level": request.form.get("construction-level"),
+            "heel_height": request.form.get("heel_height"),
+            "toe_shape": request.form.get("toe_shape"),
+            "shoes_image": request.form.get("shoes_image"),
+            "username": session["user"],
+            "date_added": request.form.get("date_added"),
+            "is_private": is_private
+        }
+        mongo.db.shoes.update_one({"_id": ObjectId(shoes_id)}, {"$set": submit})
+        flash("Record successfully updated.")
+        return redirect(url_for('profile', username=session['user']))
+
     shoes = mongo.db.shoes.find_one({"_id": ObjectId(shoes_id)})
 
     categories = mongo.db.categories.find().sort("category_name", 1)

@@ -19,7 +19,7 @@
                 <div class="row">
                     {% for shoe in shoes %}
                         <!-- Only display shoes created by this user (both private and public)-->
-                        {% if shoe.username %}
+                        {% if session.user|lower == shoe.username|lower %}
                             <!-- "Card reveal" from https://materializecss.com/cards.html -->
                             <div class="card small col s12 m6 xl4">
                                 <div><h5>{{ shoe.shoes_name }}</h5></div>
