@@ -15,15 +15,50 @@
                         data-tooltip="Click to add another pair of shoes!">add</i>
                     </button>
                 </div>
+
+                <div class="row">
+                    {% for shoe in shoes %}
+                        <!-- Only display shoes created by this user (both private and public)-->
+                        {% if shoe.username %}
+                            <!-- "Card reveal" from https://materializecss.com/cards.html -->
+                            <div class="card small col s12 m6 xl4">
+                                <div><h5>{{ shoe.shoes_name }}</h5></div>
+                                <!-- Image -->
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{{ shoe.shoes_image }}">
+                                </div>
+                                <!-- Content below image (always visible) -->
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">
+                                        <a href="#" class="btn-small light-blue">Edit</a>
+                                        <i class="material-icons right tooltipped" data-tooltip="More info">library_books</i>
+                                    </span>
+                                </div>
+                                <!-- Text to be revealed -->
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">{{ shoe.shoes_name }}
+                                        <i class="material-icons right">close</i>
+                                    </span>
+                                    <p>{{ shoe.shoes_description }}</p>
+                                    <div><small>Category: {{ shoe.category_name }}</small></div>
+                                    <div><small>Brand: {{ shoe.brand_name }}</small></div>
+                                    <div><small>Heel-height: {{ shoe.heel_height }}</small></div>
+                                    <div><small>Toe-shape: {{ shoe.toe_shape }}</small></div>
+                                    <div><small>Design: {{ shoe.design_level }}</small></div>
+                                    <div><small>Comfort: {{ shoe.comfort_level }}</small></div>
+                                    <div><small>Construction: {{ shoe.construction_level }}</small></div>
+                                    <div><small>Username: {{ shoe.username }}</small></div>
+                                    <div><small>Date added: {{ shoe.date_added }}</small></div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
             </div>
         </div>
     </div>
-    <!-- Link to register-page in case user is new -->
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">Want to add another pair of shoes? <a href="{{ url_for('login') }}">Add New</a></p>
-        </div>
-    </div>
+    
                 
 
 {% endblock %}

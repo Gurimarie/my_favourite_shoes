@@ -27,9 +27,9 @@ def home_page():
     return render_template("index.html")
 
 
-@app.route("/get_shoes")    # this is actually for Gallery, not home-page!
+@app.route("/get_shoes")    # MUST ADD "ONLY PUBLIC!"
 def get_shoes():
-    """ Retrieve all shoes for Home-page """
+    """ Retrieve all shoes for Gallery-page """
     shoes = list(mongo.db.shoes.find())
     return render_template("shoes.html", shoes=shoes)
 
@@ -91,9 +91,10 @@ def login():
 def profile(username):
     # Grab the session-user's username from db (and only username)
     username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    shoes = list(mongo.db.shoes.find())
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, shoes=shoes)
 
     # If session-cookie is gone, redirect to login (for security) 
     return redirect(url_for("login"))
