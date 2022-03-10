@@ -32,8 +32,9 @@
         <!-- Description (textarea from https://materializecss.com/text-inputs.html) -->
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="shoes_description" name="shoes_description" class="materialize-textarea validate"
-                    minlength="5" maxlength="100"></textarea>
+                <textarea id="shoes_description" name="shoes_description" 
+                    class="materialize-textarea validate" minlength="5" maxlength="100">
+                </textarea>
                 <label for="shoes_description">Description</label>
             </div>
         </div>
@@ -91,7 +92,8 @@
         <div class="row">
             <div class="range-field col s12">
                 <p>How much do you like the design?</p>
-                <input id="design-level" name="design-level" type="range" class="validate" min="0" max="10">
+                <input id="design-level" name="design-level" type="range"
+                    class="validate" min="0" max="10">
                 <label for="design-level">Range from 0 to 10 where 10 is the best.</label>
             </div>
         </div>
@@ -100,7 +102,8 @@
         <div class="row">
             <div class="range-field col s12">
                 <p>How comfortable are the shoes?</p>
-                <input id="comfort-level" name="comfort-level" type="range" class="validate" min="0" max="10">
+                <input id="comfort-level" name="comfort-level" type="range"
+                    class="validate" min="0" max="10">
                 <label for="comfort-level">Range from 0 to 10 where 10 is the best.</label>
             </div>
         </div>
@@ -109,7 +112,8 @@
         <div class="row">
             <div class="range-field col s12">
                 <p>How is the construction?</p>
-                <input id="construction-level" name="construction-level" type="range" class="validate" min="0" max="10">
+                <input id="construction-level" name="construction-level" type="range"
+                    class="validate" min="0" max="10">
                 <label for="construction-level">Range from 0 to 10 where 10 is the best.</label>
             </div>
         </div>
@@ -141,8 +145,13 @@
         <!-- Buttons (submit and cancel) -->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="col s3 offset-s2 btn light-blue darken-4 waves-effect waves-light">Add now <i class="material-icons right">add</i></button>
-                <button type="cancel" class="col s3 offset-s2 btn green darken-2 waves-effect waves-light">Cancel <i class="material-icons right">clear</i></button>
+                <button type="cancel" class="col s3 offset-s2 btn green darken-2
+                    waves-effect waves-light">Cancel <i class="material-icons right">clear</i>
+                </button>
+                <button type="submit" class="col s3 offset-s2 btn light-blue darken-4
+                    waves-effect waves-light">Add now <i class="material-icons right">add</i>
+                </button>
+                
             </div>
         </div>
     </form>
