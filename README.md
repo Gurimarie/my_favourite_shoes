@@ -87,13 +87,11 @@ JS validation
 
 
 ### Testing for user stories in UX-section:
+Everything has been tested every step of the way.
 
 ### Further testing:
 #### Test on different screen sizes:
-Expected: X when Y
-Testing: do Y
-Result: The site did not respond due to ..."A" or: the site acted as expected and did X
-Fix: Did Z to the code because of problem..."A"
+The Logo in the navbar was too large on small devices, so it has been given the class of "hide-on-med-and-down" so that it is not visible on smaller devices anymore.
 
 #### Test on different browsers:
 The website has been tested on Chrome and Firefox, and works fine on both. 
@@ -124,7 +122,6 @@ The project was then deployed at Heroku.com with automatic deploys through githu
 3. When the zip is downloaded, open the folder, and move the unzipped folder to where you wish to store it on your computer.
 4. Open your Visual Studio Code (or other programming-software), click File, Open Folder, and choose the unzipped folder you just downloaded from where you saved it to.
  
-
 
 
 
