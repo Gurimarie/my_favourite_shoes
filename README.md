@@ -44,22 +44,21 @@ https://materializecss.com/color.html
 ### Imagery:
 - All images are from https://www.pexels.com/search/shoes/
 
-## Wireframes
-
-
 
 ## Features
 
-- Feature 1 included
-- Feature 2 included
-- Feature 3 included
+- Register a user, with access to private profile-page
+- User passwords are hashed using "Werkzeug"
+- CRUD Create, read, update and delete records of shoes in the database 
+- Create, update and delete records of categories in the database, only for admin-user
+- Search-function on Gallery-page, searching through words in "shoe-name" and "shoe-description".
 
 
 #### Future features:
-- Possible future feature 1 not yet included
-- Possible future feature 1 not yet included
+- We collect user email at registration, and plan to set up a password-recovery-system by way of email.
+- Users should be able to "like" and comment on each others pictures/shoe-records.
+- There should be filters on the gallery-page, filtering by category, heel-height or comfort-level and all the other features, in addition to the word-search that is there now.
 
-## Issues overcome
 
 
 ## Technology used
@@ -97,51 +96,35 @@ Result: The site did not respond due to ..."A" or: the site acted as expected an
 Fix: Did Z to the code because of problem..."A"
 
 #### Test on different browsers:
-Expected: X when Y
-Testing: do Y
-Result: The site did not respond due to ..."A" or: the site acted as expected and did X
-Fix: Did Z to the code because of problem..."A"
+The website has been tested on Chrome and Firefox, and works fine on both. 
 
 ### Fixed bugs:
 #### Bug 1
-![Picture of problem]()
-
+The Logo in the navbar was too large on small devices, so it has been given the class of "hide-on-med-and-down" so that it is not visible on smaller devices anymore.
 
 #### Bug 2
-![Picture of problem]()
-
-
+The "toe_shape"-feature did not register in the database when entering new shoe-records. It turned out to be because of inconsistent use of "toe_shape" and "toe-shape". Once there were underscores everywhere and no dashes, it worked fine.
 
 
 ### Unfixed bugs:
-
+When editing a shoe-record, the current value on every field should be collected from the database, but I have not yet figured out how to do that for the two select-input-fields "heel_height" and "toe_shape". Therefore these fields are empty when we start to edit, and if they are not filled in, the prior value is overwritten by the empty input. This should be fixed both by successfully retrieving the data, and also by some rule that an empty new value should not overwrite a prior value.
 
 
 ## Deployment
-This project was developed using Gitpod.io with the basic template from Code Institute. committed to git and pushed to GitHub using git-extensions in Visual Studio Code.
-
-### Steps to deploy this page to GitHub Pages from GitHub repository:
-1. Log into GitHub.
-2. Find the project "" from the list of repositories and open it.
-3. Go to the “Settings”-option.
-4. Scroll down to the section called “Pages” in the menu on the left side, and click it to open the Github-pages page.
-5. Under "Source", select the correct branch (in this case, “main”), and click on the Save-button.
-
-6. The page will refresh, and the message on top says:
-“Your site is ready to be published at: https://gurimarie.github.io/my_favourite_shoes/”
-Use this link to access the deployed website.
+This project was developed using Gitpod.io with the basic template from Code Institute. Committed to git and pushed to GitHub using git-extensions in Github.
+The database used is Cloud MongoDB. I first created the database on the MongoDB-website, and then connected it to the project through the Mongo_URI.
+The project was then deployed at Heroku.com with automatic deploys through github.
 
 
 ### Forking the GitHub repository:
 
 ### Making a local clone:
-1. Follow this link (MUST BE LINKED UP!) to the projects Github repository.
+1. Follow this link (https://github.com/Gurimarie/my_favourite_shoes) to the projects Github repository.
 2. Under the repository name, click the green "Code"-button, and choose "https" and click on the "Download Zip"-option.
 3. When the zip is downloaded, open the folder, and move the unzipped folder to where you wish to store it on your computer.
 4. Open your Visual Studio Code (or other programming-software), click File, Open Folder, and choose the unzipped folder you just downloaded from where you saved it to.
  
 
-TEST AND FILL OUT REST!!!
 
 
 
