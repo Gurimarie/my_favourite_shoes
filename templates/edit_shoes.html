@@ -152,12 +152,15 @@
         <!-- Buttons (edit and cancel) -->
         <div class="row">
             <div class="col s12 center-align">
-                <a href="{{ url_for('profile', username=session['user']) }}" class="col s3 offset-s2 btn green darken-2 waves-effect waves-light">
+                <a href="{{ url_for('profile', username=session['user']) }}" class="col s3 offset-s1 btn green darken-2 waves-effect waves-light">
                     Cancel <i class="material-icons right">clear</i>
                 </a>
-                <button type="submit" class="col s3 offset-s2 btn light-blue darken-4 waves-effect waves-light">
+                <button type="submit" class="col s3 offset-s1 btn light-blue darken-4 waves-effect waves-light">
                     Save changes <i class="material-icons right">mode_edit</i>
                 </button>
+                <a href="{{ url_for('delete_shoes', shoes_id=shoes._id) }}" class="col s3 offset-s1 btn red darken-2 waves-effect waves-light">
+                    Delete <i class="material-icons right">delete</i>
+                </a>
             </div>
         </div>
     </form>

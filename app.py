@@ -164,6 +164,14 @@ def edit_shoes(shoes_id):
     return render_template("edit_shoes.html", shoes=shoes, categories=categories)
 
 
+@app.route("/delete_shoes/<shoes_id>")
+def delete_shoes(shoes_id):
+    mongo.db.shoes.delete_one({"_id": ObjectId(shoes_id)})
+    flash("This record has now been deleted")
+    return redirect(url_for('profile', username=session['user']))
+
+
+
 # Run app
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
