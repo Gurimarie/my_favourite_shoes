@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Edit category</h3>
+
+<!-- "Card Panel" from https://materializecss.com/cards.html -->
+<div class="row card-panel">
+    <form class="col s12 m8 offset-m2" method="POST"
+        action="{{ url_for('edit_category', category_id=category._id) }}">
+
+        <!-- Name / headline for this pair of shoes -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="category_name" name="category_name" type="text" class="validate"
+                    value="{{ category.category_name }}" minlength="3" maxlength="20" required>
+                <label for="category_name">Category name</label>
+            </div>
+        </div>
+
+ 
+        
+
+        <!-- Buttons (submit and cancel) -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('get_categories') }}" class="col s3 offset-s2 btn green darken-2
+                    waves-effect waves-light">Cancel <i class="material-icons right">clear</i>
+                </a>
+                <button type="submit" class="col s3 offset-s2 btn light-blue darken-4
+                    waves-effect waves-light">Update <i class="material-icons right">add</i>
+                </button>
+                
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

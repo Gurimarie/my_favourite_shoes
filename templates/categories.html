@@ -25,7 +25,7 @@
                     <a href="#" class="btn red darken-3 tooltipped" data-position="left"
                         data-tooltip="Delete category"><i class="material-icons">delete</i>
                     </a>
-                    <a href="#" class="btn light-blue darken-4 tooltipped" data-position="right"
+                    <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn light-blue darken-4 tooltipped" data-position="right"
                         data-tooltip="Edit category"><i class="material-icons">mode_edit</i>
                     </a>
                 </div>
