@@ -109,6 +109,27 @@ def logout():
 
 @app.route("/add_shoes", methods=["GET", "POST"])
 def add_shoes():
+    if request.method == "POST":
+        is_private = "yes" if request.form.get("is_private") else "no"
+        shoes = {
+            "category_name": request.form.get("category_name"),
+            "shoes_name": request.form.get("shoes_name"),
+            "shoes_description": request.form.get("shoes_description"),
+            "brand_name": request.form.get("brand_name"),
+            "comfort_level": request.form.get("comfort-level"),
+            "design_level": request.form.get("design-level"),
+            "construction_level": request.form.get("construction-level"),
+            "heel_height": request.form.get("heel_height"),
+            "toe_shape": request.form.get("toe_shape"),
+            "shoes_image": request.form.get("shoes_image"),
+            "username": session["user"],
+            "date_added": request.form.get("date_added"),
+            "is_private": is_private
+        }
+        mongo.db.shoes.insert_one(shoes)
+        flash("New shoes successfully added!")
+        return redirect(url_for("get_shoes"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_shoes.html", categories=categories)
 
