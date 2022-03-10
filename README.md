@@ -1,43 +1,48 @@
 README-file- template
 
-# My Favourite Shoes
-## Where shoe-lovers may share, discuss and talk about their favourite shoes 
-Info about the scope of the website
+# "I Love Shoes"
+## A web-site where shoe-lovers may share, discuss and talk about their favourite shoes 
+Looking through the public gallery is open to anyone visiting the site, but in order to contribute to the database, you need to create a user and log in.
 
+When entering a record for a pair of shoes, you may choose for it to be public (visible to everyone), og private (only visible on your private profile-page).
 
-![Picture of different view-port-displays]()
+![Picture of different view-port-displays](assets/images/love_shoes_responsive.JPG)
 
-Click here to view the website
+Click here to view the website http://i-love-shoes.herokuapp.com/home_page
 
 ## User Experience (UX)
 
 ### User stories:
 
 ### First time visitor goals
-Exploring the site, get exited about talking to others who are interested in shoes, get inspired.
+Exploring the site and getting inspired.
 
 ### Returning visitor goals
-.....
+Register as a user, start to build my profile, or just get inspiration from others. Finding out if those beatiful deasigner-shoes I've dreamt about are actually comfortable to wear (or just pretty to look at), from someone who has already bought them.
 
 ### Frequent user goals
 Sharing and getting followers. Perhaps promoting small shoe-brands?
+May also be just for private use, keeping a record of all my shoes, to go through when I need to decide what to wear, or what I need to buy for the next season.
 
 ### Site owner goals
-Get information on what shoelovers appreciate most in their shoes, and what variables should be available to choose from is the users were to design their own favourite shoes. Ultimately to create a on-demand-production, design-your-own-shoes, shoe-brand.
+Get information on what shoelovers appreciate most in their shoes, and what variables should be available to choose from if the users were to design their own favourite shoes. Ultimately to create a "design-your-own-shoes"-shoe-brand.
 
 ## Design
 
 ### Colour scheme:
-....
-![Picture of colour scheme]()
+https://materializecss.com/color.html
+- navbar: grey darken-4
+- background: grey lighten-4
+- submit/enter buttons: light-blue darken-4
+- cancel/reset buttons: green darken-2
+- flash: blue lighten-3
+- delete buttons: pink darken-2
 
-### Typography:
-....
+![Picture of colour scheme](assets/images/love_shoes_colors.JPG)
 
-![Picture of fonts samples]()
 
 ### Imagery:
-- All images from https://www.pexels.com/search/shoes/
+- All images are from https://www.pexels.com/search/shoes/
 
 ## Wireframes
 
@@ -76,8 +81,9 @@ https://werkzeug.palletsprojects.com/en/2.0.x/utils/#module-werkzeug.security
 ## Testing
 
 ### Validation:
-HTML validation
-CSS validation
+## HTML validation
+Lack of alt-attribute for images cane up as an error, and has been fixed.
+
 JS validation
 
 
@@ -112,7 +118,7 @@ Fix: Did Z to the code because of problem..."A"
 
 
 ## Deployment
-This project was developed using Visual Studio Code, committed to git and pushed to GitHub using git-extensions in Visual Studio Code.
+This project was developed using Gitpod.io with the basic template from Code Institute. committed to git and pushed to GitHub using git-extensions in Visual Studio Code.
 
 ### Steps to deploy this page to GitHub Pages from GitHub repository:
 1. Log into GitHub.
@@ -144,11 +150,10 @@ TEST AND FILL OUT REST!!!
 ### Code:
 
 - https://github.com/PaulFrankling/discover-north-yorks used for README-structure.
-- Code Institute courses for everything
+- This project follows closely the Flask Mini-project from Module 3, Code Institute. The details are different but that project has been a template for the development of is project.
 
-### Content:
 
 ### Media used:
+- All images are from https://www.pexels.com/search/shoes/ (free image-base)
 
-### Acknowledgements:
 
